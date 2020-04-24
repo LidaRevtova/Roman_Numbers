@@ -32,15 +32,15 @@ class Rim:
             ten = 0
 
             for i in self.rim_number:
-                dict_ten.append(dict_num[i])
+                dict_ten.append(int(dict_num[i]))
             for j in range(len(dict_ten)):
                 try:
-                    if dict_ten[j] < dict_ten[j + 1]:
-                        ten -= int(dict_ten[j])
+                    if dict_ten[j] <= dict_ten[j + 1]:
+                        ten -= dict_ten[j]
                     else:
-                        ten += int(dict_ten[j])
+                        ten += dict_ten[j]
                 except IndexError:
-                    ten += int(dict_ten[j])
+                    ten += dict_ten[j]
 
             return str(ten)
 
